@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title> New Book upload</title>
+</head>
+
+<body>
+  <div class="container" ng-controller="frontCtrl">
+    <h1> New Book Upload </h1>
+    <%= typeof msg != 'undefined' ? msg : '' %>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Please Upload a Image of your Book's Cover</span>
+          <input name="bookImage" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <b> Name of the Book:<b>
+              <input id="book_name" type="text" class="validate" name="book_name">
+              <label for="book_name"> Book Name </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <b> Name of the Author:<b>
+              <input id="author_name" type="text" class="validate" name="author_name">
+              <label for="author_name"> Author's Name </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <b> Name of the Publisher:<b>
+              <input id="publisher_name" type="text" class="validate" name="publisher_name">
+              <label for="publisher_name"> Publisher Name </label>
+        </div>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <br>
+    <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
