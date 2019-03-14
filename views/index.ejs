@@ -12,15 +12,7 @@
     <h1> New Book Upload </h1>
     <%= typeof msg != 'undefined' ? msg : '' %>
     <form action="/upload" method="POST" enctype="multipart/form-data">
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>Please Upload a Image of your Book's Cover</span>
-          <input name="bookImage" type="file">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
+
 
       <div class="row">
         <div class="col s12">
