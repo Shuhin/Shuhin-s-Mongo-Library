@@ -116,9 +116,9 @@ server.route({
     try {
       let newBook = new bookSchema(request.payload);
       let result = await newBook.save();
-      return h.response(result);
+      //return h.response(result);
       console.log(result);
-      //return h.view('start', { data: result });
+      return h.view('start', { data: result });
     } catch (e) {
       return h.response(error).code(500);
     } finally {
@@ -136,22 +136,6 @@ await server.start();
 start();
 
 
-// app.get('/book/Add', function(req, res, next) {
-//   res.render('index');
-// });
-//
-// app.get('/book/BookSummary/:title', function(req, res, next) {
-//   bookSchema.find({ title: req.params.title }, function(error, result) {
-//     if (error) {
-//       next(error);
-//       return;
-//     } else {
-//   console.log(result);
-//   res.render('BookSummary', { data: result });
-//    }
-//  });
-// });
-//
 // app.post('/upload', function(req, res, next) {
 //   upload(req, res, function(err) {
 //     if (err) {
